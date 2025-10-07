@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3 - Black-Hat Hackers | TrustSphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">TrustSphere</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="module1.html" class="nav-link">Module 1</a></li>
+                <li><a href="module2.html" class="nav-link">Module 2</a></li>
+                <li><a href="module3.html" class="nav-link active">Module 3</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-header fade-in">
+                <span class="module-badge">Module 03</span>
+                <h1 class="module-main-title">Black-Hat Hackers & Dark Web</h1>
+                <p class="module-subtitle">Understanding Data Breaches & Zero-Trust Security</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="simulation-section">
+        <div class="container">
+            <div class="simulation-intro glass-panel fade-in-up">
+                <h2>The Problem</h2>
+                <p>
+                    Data breaches expose millions of user credentials, financial information, and personal 
+                    data to cybercriminals every year. Once compromised, this information flows through 
+                    dark web marketplaces where it's bought, sold, and exploited for identity theft, 
+                    financial fraud, and targeted attacks.
+                </p>
+                <div class="breach-stats">
+                    <div class="breach-stat" data-tooltip="Records exposed in 2024 alone">
+                        <span class="breach-number">2.6B+</span>
+                        <span class="breach-label">Records Exposed</span>
+                    </div>
+                    <div class="breach-stat" data-tooltip="Average cost per data breach">
+                        <span class="breach-number">$4.45M</span>
+                        <span class="breach-label">Breach Cost</span>
+                    </div>
+                    <div class="breach-stat" data-tooltip="Days to identify and contain breach">
+                        <span class="breach-number">277</span>
+                        <span class="breach-label">Detection Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="simulation-box glass-panel fade-in-up">
+                <h3 class="simulation-title">
+                    <span class="title-icon">⚡</span>
+                    Data Breach Visualization
+                </h3>
+                
+                <div class="breach-simulator">
+                    <div class="simulator-controls">
+                        <button id="startBreachSim" class="sim-button primary-sim-button">
+                            Simulate Data Breach
+                        </button>
+                        <button id="stopBreachSim" class="sim-button danger-sim-button hidden">
+                            Stop Breach
+                        </button>
+                    </div>
+
+                    <div id="breachAnimation" class="breach-animation-container">
+                        <div class="database-container">
+                            <div class="database-icon">🗄️</div>
+                            <p class="database-label">User Database</p>
+                            <div class="database-health">
+                                <span id="healthStatus">🟢 Secure</span>
+                            </div>
+                        </div>
+
+                        <div id="dataFlow" class="data-flow-area">
+                            <!-- Data particles will be spawned here -->
+                        </div>
+
+                        <div class="attacker-container">
+                            <div class="attacker-icon">🥷</div>
+                            <p class="attacker-label">Black-Hat Attacker</p>
+                        </div>
+                    </div>
+
+                    <div id="breachLog" class="breach-log hidden">
+                        <h4>Breach Activity Log:</h4>
+                        <div class="log-entries">
+                            <div class="log-entry" style="animation-delay: 0.5s;">
+                                <span class="log-time">00:01</span>
+                                <span class="log-text">🔓 SQL Injection attack initiated</span>
+                            </div>
+                            <div class="log-entry" style="animation-delay: 1s;">
+                                <span class="log-time">00:03</span>
+                                <span class="log-text">⚠️ Firewall bypassed via zero-day exploit</span>
+                            </div>
+                            <div class="log-entry" style="animation-delay: 1.5s;">
+                                <span class="log-time">00:07</span>
+                                <span class="log-text">💳 Credit card database accessed</span>
+                            </div>
+                            <div class="log-entry" style="animation-delay: 2s;">
+                                <span class="log-time">00:12</span>
+                                <span class="log-text">📧 Email addresses exfiltrated (2.4M records)</span>
+                            </div>
+                            <div class="log-entry" style="animation-delay: 2.5s;">
+                                <span class="log-time">00:18</span>
+                                <span class="log-text">🔑 Password hashes stolen</span>
+                            </div>
+                            <div class="log-entry" style="animation-delay: 3s;">
+                                <span class="log-time">00:24</span>
+                                <span class="log-text">🌐 Data uploaded to dark web marketplace</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="breachImpact" class="breach-impact hidden">
+                        <h4>What Happens Next:</h4>
+                        <div class="impact-timeline">
+                            <div class="timeline-step">
+                                <div class="step-marker">1</div>
+                                <div class="step-content">
+                                    <h5>Dark Web Sale</h5>
+                                    <p>Stolen data appears on dark web forums within hours. Full identity packages sell for $20-$200 each.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-marker">2</div>
+                                <div class="step-content">
+                                    <h5>Credential Stuffing</h5>
+                                    <p>Attackers test stolen passwords across thousands of sites, exploiting password reuse.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-marker">3</div>
+                                <div class="step-content">
+                                    <h5>Identity Theft</h5>
+                                    <p>Financial fraud, fraudulent accounts, and targeted phishing campaigns using your personal information.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solution-box glass-panel fade-in-up">
+                <h3 class="solution-title">
+                    <span class="title-icon">🛡️</span>
+                    Defense Mechanisms
+                </h3>
+                
+                <button id="showDefenseBtn" class="show-solution-button">
+                    Reveal Security Solutions
+                </button>
+
+                <div id="defenseContent" class="solution-content hidden">
+                    <p class="solution-intro">
+                        While you can't control whether companies get breached, you can minimize damage 
+                        and make yourself a harder target through defensive strategies:
+                    </p>
+
+                    <div class="defense-cards">
+                        <div class="defense-card" data-tooltip="Makes each account unique so one breach doesn't compromise everything">
+                            <div class="defense-icon">🔐</div>
+                            <h4>Strong, Unique Passwords</h4>
+                            <p><strong>Why it works:</strong> Password reuse amplifies breach damage exponentially</p>
+                            <ul>
+                                <li>Use a password manager (Bitwarden, 1Password, KeePass)</li>
+                                <li>Generate 16+ character random passwords</li>
+                                <li>Never reuse passwords across sites</li>
+                                <li>Enable password breach monitoring</li>
+                            </ul>
+                            <div class="example-box">
+                                <strong>Example:</strong><br>
+                                ❌ Bad: "MyPassword123!"<br>
+                                ✅ Good: "X9$mK#2nP@7qL5wT!jR8"
+                            </div>
+                        </div>
+
+                        <div class="defense-card" data-tooltip="Requires second verification step even if password is stolen">
+                            <div class="defense-icon">📱</div>
+                            <h4>Two-Factor Authentication (2FA)</h4>
+                            <p><strong>Why it works:</strong> Stolen passwords alone become useless</p>
+                            <ul>
+                                <li>Use authenticator apps (Authy, Google Authenticator)</li>
+                                <li>Hardware keys for critical accounts (YubiKey)</li>
+                                <li>Avoid SMS-based 2FA when possible (SIM swapping risk)</li>
+                                <li>Store backup codes securely</li>
+                            </ul>
+                            <div class="stat-highlight">
+                                <strong>99.9%</strong> of automated attacks blocked by 2FA
+                            </div>
+                        </div>
+
+                        <div class="defense-card" data-tooltip="Limits damage if one part of your system is compromised">
+                            <div class="defense-icon">🚫</div>
+                            <h4>Zero-Trust Architecture</h4>
+                            <p><strong>Why it works:</strong> Never assume anything is safe by default</p>
+                            <ul>
+                                <li>Verify every access request, every time</li>
+                                <li>Implement principle of least privilege</li>
+                                <li>Use micro-segmentation to isolate systems</li>
+                                <li>Continuous monitoring and logging</li>
+                            </ul>
+                            <div class="principle-box">
+                                <strong>Core Principle:</strong> "Never trust, always verify"—even internal network traffic
+                            </div>
+                        </div>
+
+                        <div class="defense-card" data-tooltip="Know immediately if your data appears in a breach">
+                            <div class="defense-icon">🔔</div>
+                            <h4>Breach Monitoring</h4>
+                            <p><strong>Why it works:</strong> Early detection enables rapid response</p>
+                            <ul>
+                                <li>Use HaveIBeenPwned.com for email monitoring</li>
+                                <li>Enable dark web monitoring (via password managers)</li>
+                                <li>Set up credit monitoring services</li>
+                                <li>Monitor unusual account activity</li>
+                            </ul>
+                            <div class="action-box">
+                                <strong>Action:</strong> If breached, immediately change password and enable 2FA
+                            </div>
+                        </div>
+
+                        <div class="defense-card" data-tooltip="Keep systems patched to close security holes">
+                            <div class="defense-icon">🔄</div>
+                            <h4>Regular Updates</h4>
+                            <p><strong>Why it works:</strong> Most breaches exploit known, patchable vulnerabilities</p>
+                            <ul>
+                                <li>Enable automatic security updates</li>
+                                <li>Update all software, not just OS</li>
+                                <li>Replace unsupported software immediately</li>
+                                <li>Patch within 24 hours of critical updates</li>
+                            </ul>
+                        </div>
+
+                        <div class="defense-card" data-tooltip="Minimize data companies collect about you">
+                            <div class="defense-icon">📉</div>
+                            <h4>Data Minimization</h4>
+                            <p><strong>Why it works:</strong> Can't leak what you never shared</p>
+                            <ul>
+                                <li>Provide only required information</li>
+                                <li>Use privacy-focused email aliases</li>
+                                <li>Delete old, unused accounts</li>
+                                <li>Review and revoke app permissions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="zero-trust-diagram">
+                        <h4>Zero-Trust Security Model</h4>
+                        <div class="trust-comparison">
+                            <div class="trust-model old-model">
+                                <h5>❌ Traditional "Castle & Moat"</h5>
+                                <p>Trust everything inside network perimeter</p>
+                                <div class="model-diagram">
+                                    <div class="perimeter">
+                                        <span class="firewall-label">Firewall</span>
+                                        <div class="trusted-zone">
+                                            <span>Everything Inside = Trusted</span>
+                                            <p class="vulnerability">⚠️ One breach = full access</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trust-model new-model">
+                                <h5>✅ Zero-Trust Model</h5>
+                                <p>Verify every request, segment everything</p>
+                                <div class="model-diagram">
+                                    <div class="segmented-zones">
+                                        <div class="zone">Segment A<br>🔒 Verify</div>
+                                        <div class="zone">Segment B<br>🔒 Verify</div>
+                                        <div class="zone">Segment C<br>🔒 Verify</div>
+                                    </div>
+                                    <p class="advantage">✓ Breach contained to one segment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="response-plan">
+                        <h4>🚨 If You're in a Data Breach:</h4>
+                        <ol class="response-steps">
+                            <li><strong>Immediate:</strong> Change passwords for affected service and any service using same password</li>
+                            <li><strong>Within 24 hours:</strong> Enable 2FA on all accounts, especially financial</li>
+                            <li><strong>Within 1 week:</strong> Check credit reports for fraudulent activity</li>
+                            <li><strong>Ongoing:</strong> Monitor accounts for 12+ months, consider credit freeze</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-takeaways glass-panel fade-in-up">
+                <h3>Key Takeaways</h3>
+                <div class="takeaways-grid">
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">1</span>
+                        <p><strong>Assume Breaches Will Happen:</strong> Focus on minimizing damage through unique passwords and 2FA.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">2</span>
+                        <p><strong>Embrace Zero-Trust:</strong> Never automatically trust anything—verify every access request continuously.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">3</span>
+                        <p><strong>Monitor and Respond:</strong> Use breach monitoring services and act immediately when your data is compromised.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="module2.html" class="nav-button prev-button">← Previous Module</a>
+                <a href="index.html" class="nav-button next-button">Back to Home →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About TrustSphere</h4>
+                    <p>An educational platform dedicated to digital privacy awareness and trust-building through interactive learning.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="module1.html">Terms & Dark Patterns</a></li>
+                        <li><a href="module2.html">False Security</a></li>
+                        <li><a href="module3.html">Cyber Threats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>info@trustsphere.edu</p>
+                    <p>Privacy Policy | Terms of Use</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TrustSphere. Educational purposes only. Built with transparency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

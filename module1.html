@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 - Terms & Dark Patterns | TrustSphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">TrustSphere</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="module1.html" class="nav-link active">Module 1</a></li>
+                <li><a href="module2.html" class="nav-link">Module 2</a></li>
+                <li><a href="module3.html" class="nav-link">Module 3</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-header fade-in">
+                <span class="module-badge">Module 01</span>
+                <h1 class="module-main-title">Opaque Terms & Dark Patterns</h1>
+                <p class="module-subtitle">Understanding Manipulative Design & Confusing Language</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="simulation-section">
+        <div class="container">
+            <div class="simulation-intro glass-panel fade-in-up">
+                <h2>The Problem</h2>
+                <p>
+                    Companies deliberately design terms and conditions with impenetrable legal jargon, 
+                    tiny fonts, and excessive length to discourage reading. Dark patterns—manipulative 
+                    UI design choices—push users toward decisions that benefit the company at the expense 
+                    of user privacy and autonomy.
+                </p>
+                <div class="problem-stats">
+                    <div class="problem-stat" data-tooltip="Average word count of Terms & Conditions">
+                        <span class="problem-number">15,000+</span>
+                        <span class="problem-label">Words</span>
+                    </div>
+                    <div class="problem-stat" data-tooltip="Time required to fully read">
+                        <span class="problem-number">73 min</span>
+                        <span class="problem-label">Reading Time</span>
+                    </div>
+                    <div class="problem-stat" data-tooltip="Average user attention span">
+                        <span class="problem-number">8 sec</span>
+                        <span class="problem-label">User Attention</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="simulation-box glass-panel fade-in-up">
+                <h3 class="simulation-title">
+                    <span class="title-icon">⚠️</span>
+                    Experience the Dark Pattern
+                </h3>
+                
+                <div id="darkPatternDemo" class="dark-pattern-demo">
+                    <div class="fake-tos-container">
+                        <div class="fake-tos-header">
+                            <h4>Terms and Conditions of Service Agreement</h4>
+                            <span class="tos-version">v.8.2.4-rev.2023Q4</span>
+                        </div>
+                        <div class="fake-tos-content">
+                            <p class="tos-text">
+                                <strong>ARTICLE I: DEFINITIONS AND INTERPRETATION</strong><br><br>
+                                1.1 In these Terms of Service (hereinafter "the Agreement"), unless the context otherwise 
+                                requires, the following expressions shall have the following meanings: "Service Provider" 
+                                shall mean the incorporated entity operating under the registered business name as filed 
+                                with the appropriate governmental regulatory authority; "User" or "You" shall mean any 
+                                natural or juridical person accessing, utilizing, or otherwise engaging with the Service 
+                                as defined herein; "Service" shall mean the aggregate functionality, features, content, 
+                                and technological infrastructure provided by Service Provider through any medium whatsoever...<br><br>
+                                
+                                <strong>ARTICLE II: DATA COLLECTION AND USAGE RIGHTS</strong><br><br>
+                                2.1 By accessing the Service, User hereby grants Service Provider an irrevocable, 
+                                perpetual, worldwide, royalty-free license to collect, process, analyze, monetize, 
+                                transfer, and sublicense any and all data, metadata, usage patterns, biometric information, 
+                                location data, behavioral analytics, and derivative works thereof. This includes but is 
+                                not limited to: (a) personal identifying information including full legal name, residential 
+                                address, email addresses, telephone numbers, government-issued identification numbers; 
+                                (b) financial information including credit card details, bank account information, 
+                                transaction history, and purchasing patterns; (c) technical information including IP 
+                                addresses, device identifiers, browser fingerprints, and network activity logs...<br><br>
+                                
+                                2.2 Service Provider reserves the unilateral right to share, sell, or otherwise transfer 
+                                User data to third parties, affiliates, partners, advertisers, data brokers, and any other 
+                                entities at Service Provider's sole discretion without further notice or consent...<br><br>
+                                
+                                <strong>ARTICLE III: LIABILITY LIMITATIONS AND INDEMNIFICATION</strong><br><br>
+                                3.1 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SERVICE PROVIDER SHALL NOT BE 
+                                LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE, OR 
+                                EXEMPLARY DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE...<br><br>
+                                
+                                3.2 User agrees to indemnify, defend, and hold harmless Service Provider, its officers, 
+                                directors, employees, agents, licensors, and suppliers from and against all claims, losses, 
+                                expenses, damages, and costs, including reasonable attorneys' fees...
+                            </p>
+                            <div class="tos-fade"></div>
+                        </div>
+                        <div class="tos-scroll-hint">Scroll to read more (98% remaining)</div>
+                    </div>
+                    
+                    <div class="dark-pattern-buttons">
+                        <button id="declineBtn" class="decline-button">
+                            Decline
+                        </button>
+                        <button id="acceptBtn" class="accept-button glow-button">
+                            ✓ Accept and Continue
+                        </button>
+                    </div>
+                    <p class="dark-pattern-hint">Notice how the Accept button is larger, highlighted, and positioned prominently?</p>
+                </div>
+
+                <div id="acceptMessage" class="accept-message hidden">
+                    <div class="message-icon">😨</div>
+                    <h4>You Just Agreed To:</h4>
+                    <ul class="consequences-list">
+                        <li>Give away perpetual rights to your personal data</li>
+                        <li>Allow your information to be sold to third parties</li>
+                        <li>Waive your right to sue for damages</li>
+                        <li>Grant access to your location, browsing history, and contacts</li>
+                    </ul>
+                    <p class="message-warning">This is exactly how dark patterns manipulate millions of users daily.</p>
+                </div>
+            </div>
+
+            <div class="solution-box glass-panel fade-in-up">
+                <h3 class="solution-title">
+                    <span class="title-icon">✨</span>
+                    The Solution
+                </h3>
+                
+                <button id="showSolutionBtn" class="show-solution-button">
+                    Reveal Better Design Practices
+                </button>
+
+                <div id="solutionContent" class="solution-content hidden">
+                    <div class="good-design-demo">
+                        <div class="good-tos-container">
+                            <div class="good-tos-header">
+                                <h4>Privacy-Friendly Terms Summary</h4>
+                                <span class="reading-time">📖 3 min read</span>
+                            </div>
+                            <div class="good-tos-content">
+                                <div class="plain-language-section">
+                                    <h5>What We Collect</h5>
+                                    <p>We only collect information necessary to provide our service:</p>
+                                    <ul>
+                                        <li><strong>Account info:</strong> Email and username</li>
+                                        <li><strong>Usage data:</strong> Features you use (not sold to third parties)</li>
+                                        <li><strong>Technical data:</strong> Device type for optimization</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="plain-language-section">
+                                    <h5>How We Use Your Data</h5>
+                                    <p>Your information is used solely to:</p>
+                                    <ul>
+                                        <li>Operate and improve the service</li>
+                                        <li>Send essential security notifications</li>
+                                        <li>Comply with legal requirements</li>
+                                    </ul>
+                                    <p class="highlight-text">🚫 We never sell your personal data to advertisers or data brokers.</p>
+                                </div>
+                                
+                                <div class="plain-language-section">
+                                    <h5>Your Rights</h5>
+                                    <p>You can always:</p>
+                                    <ul>
+                                        <li>Download all your data</li>
+                                        <li>Delete your account completely</li>
+                                        <li>Opt out of non-essential communications</li>
+                                        <li>Request data correction</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="balanced-buttons">
+                                <button class="balanced-decline">I Decline</button>
+                                <button class="balanced-accept">I Accept</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="best-practices">
+                        <h4>Design Principles for Ethical Consent</h4>
+                        <div class="principles-grid">
+                            <div class="principle-card" data-tooltip="Use simple, everyday language instead of legal jargon">
+                                <div class="principle-icon">📝</div>
+                                <h5>Plain Language</h5>
+                                <p>Write at 8th-grade reading level with clear explanations</p>
+                            </div>
+                            <div class="principle-card" data-tooltip="Give equal visual weight to all options">
+                                <div class="principle-icon">⚖️</div>
+                                <h5>Balanced Choices</h5>
+                                <p>Design accept/decline buttons with equal prominence</p>
+                            </div>
+                            <div class="principle-card" data-tooltip="Prioritize clarity over profits">
+                                <div class="principle-icon">💎</div>
+                                <h5>True Transparency</h5>
+                                <p>Make data usage immediately visible, not buried in pages</p>
+                            </div>
+                            <div class="principle-card" data-tooltip="Follow WCAG guidelines for all users">
+                                <div class="principle-icon">♿</div>
+                                <h5>Accessibility First</h5>
+                                <p>Ensure screen readers and keyboard navigation work flawlessly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-takeaways glass-panel fade-in-up">
+                <h3>Key Takeaways</h3>
+                <div class="takeaways-grid">
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">1</span>
+                        <p><strong>Question Everything:</strong> If terms seem designed to confuse you, they probably are. Demand clarity.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">2</span>
+                        <p><strong>Spot Dark Patterns:</strong> Oversized "Accept" buttons, pre-checked boxes, and hidden "Decline" options are red flags.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">3</span>
+                        <p><strong>Support Ethical Design:</strong> Choose services that respect user autonomy with plain language and balanced choices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="index.html" class="nav-button prev-button">← Back to Home</a>
+                <a href="module2.html" class="nav-button next-button">Next Module →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About TrustSphere</h4>
+                    <p>An educational platform dedicated to digital privacy awareness and trust-building through interactive learning.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="module1.html">Terms & Dark Patterns</a></li>
+                        <li><a href="module2.html">False Security</a></li>
+                        <li><a href="module3.html">Cyber Threats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>info@trustsphere.edu</p>
+                    <p>Privacy Policy | Terms of Use</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TrustSphere. Educational purposes only. Built with transparency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
