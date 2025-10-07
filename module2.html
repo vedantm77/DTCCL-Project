@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2 - False Security | TrustSphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🛡️</span>
+                <span class="logo-text">TrustSphere</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="module1.html" class="nav-link">Module 1</a></li>
+                <li><a href="module2.html" class="nav-link active">Module 2</a></li>
+                <li><a href="module3.html" class="nav-link">Module 3</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-header fade-in">
+                <span class="module-badge">Module 02</span>
+                <h1 class="module-main-title">False Sense of Security</h1>
+                <p class="module-subtitle">The Truth Behind Incognito Mode & E2E Encryption</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="simulation-section">
+        <div class="container">
+            <div class="simulation-intro glass-panel fade-in-up">
+                <h2>The Problem</h2>
+                <p>
+                    Many users believe that incognito mode makes them invisible online or that end-to-end 
+                    encryption protects all their data. In reality, these tools offer limited protection. 
+                    ISPs, websites, network administrators, and even your own device can still track 
+                    significant amounts of your activity and metadata.
+                </p>
+                <div class="myth-vs-reality">
+                    <div class="myth-box">
+                        <h4>❌ Common Myth</h4>
+                        <p>"Incognito mode makes me completely anonymous online"</p>
+                    </div>
+                    <div class="reality-box">
+                        <h4>✓ Reality</h4>
+                        <p>"Incognito only prevents local browsing history storage—ISPs, websites, and networks still see everything"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="simulation-box glass-panel fade-in-up">
+                <h3 class="simulation-title">
+                    <span class="title-icon">🔍</span>
+                    Interactive Privacy Simulation
+                </h3>
+                
+                <div class="privacy-simulator">
+                    <div class="simulator-controls">
+                        <button id="startSimulation" class="sim-button primary-sim-button">
+                            Start Simulation
+                        </button>
+                        <button id="resetSimulation" class="sim-button secondary-sim-button hidden">
+                            Reset
+                        </button>
+                    </div>
+
+                    <div class="browser-modes">
+                        <div class="browser-window" id="normalMode">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="browser-title">Normal Browsing</span>
+                            </div>
+                            <div class="browser-content">
+                                <div class="user-icon">👤</div>
+                                <p class="browser-label">Regular Mode</p>
+                            </div>
+                        </div>
+
+                        <div class="browser-window" id="incognitoMode">
+                            <div class="browser-header incognito-header">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="browser-title">🕶️ Incognito Mode</span>
+                            </div>
+                            <div class="browser-content">
+                                <div class="user-icon">🕵️</div>
+                                <p class="browser-label">Private Mode</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="trackingVisualization" class="tracking-visualization hidden">
+                        <h4>What's Being Tracked Right Now:</h4>
+                        
+                        <div class="tracking-layers">
+                            <div class="tracking-layer" data-layer="device">
+                                <div class="layer-icon">💻</div>
+                                <div class="layer-info">
+                                    <h5>Your Device</h5>
+                                    <ul class="tracked-items">
+                                        <li class="tracked-item" data-tooltip="Unique identifier for your browser">
+                                            <span class="item-status visible">●</span> Device Fingerprint
+                                        </li>
+                                        <li class="tracked-item" data-tooltip="Operating system details">
+                                            <span class="item-status visible">●</span> OS Version
+                                        </li>
+                                        <li class="tracked-item" data-tooltip="Screen resolution reveals device type">
+                                            <span class="item-status visible">●</span> Screen Resolution
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tracking-layer" data-layer="network">
+                                <div class="layer-icon">🌐</div>
+                                <div class="layer-info">
+                                    <h5>Network Level (ISP)</h5>
+                                    <ul class="tracked-items">
+                                        <li class="tracked-item" data-tooltip="Your public internet address">
+                                            <span class="item-status visible">●</span> IP Address
+                                        </li>
+                                        <li class="tracked-item" data-tooltip="Every website you visit">
+                                            <span class="item-status visible">●</span> DNS Queries
+                                        </li>
+                                        <li class="tracked-item" data-tooltip="When and how long you browse">
+                                            <span class="item-status visible">●</span> Connection Timestamps
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tracking-layer" data-layer="website">
+                                <div class="layer-icon">🏢</div>
+                                <div class="layer-info">
+                                    <h5>Website Tracking</h5>
+                                    <ul class="tracked-items">
+                                        <li class="tracked-item" data-tooltip="Still stored in incognito mode">
+                                            <span class="item-status visible">●</span> Cookies & Trackers
+                                        </li>
+                                        <li class="tracked-item" data-tooltip="What you click and how you navigate">
+                                            <span class="item-status visible">●</span> Behavioral Analytics
+                                        </li>
+                                        <li class="tracked-item" data-tooltip="Your approximate location">
+                                            <span class="item-status visible">●</span> Geolocation Data
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tracking-warning">
+                            <p><strong>⚠️ Reality Check:</strong> Incognito mode only prevents <em>local</em> history storage. 
+                            All the tracking shown above still occurs. Your ISP, employer, school network, and websites 
+                            you visit can still monitor your activity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solution-box glass-panel fade-in-up">
+                <h3 class="solution-title">
+                    <span class="title-icon">🛡️</span>
+                    Layered Privacy Protection
+                </h3>
+                
+                <button id="showProtectionBtn" class="show-solution-button">
+                    Reveal Privacy Stack
+                </button>
+
+                <div id="protectionContent" class="solution-content hidden">
+                    <p class="solution-intro">
+                        Real privacy requires multiple layers of protection. Here's how to build a comprehensive 
+                        privacy stack that actually protects your digital footprint:
+                    </p>
+
+                    <div class="protection-layers">
+                        <div class="protection-layer layer-1">
+                            <div class="layer-number">Layer 1</div>
+                            <div class="layer-content">
+                                <h4>🔐 VPN (Virtual Private Network)</h4>
+                                <p><strong>What it does:</strong> Encrypts your internet traffic and masks your IP address from websites and ISPs</p>
+                                <ul>
+                                    <li>Hides your real location</li>
+                                    <li>Prevents ISP from seeing which websites you visit</li>
+                                    <li>Protects on public Wi-Fi networks</li>
+                                </ul>
+                                <p class="layer-note">⚠️ <strong>Limitation:</strong> VPN provider can still see your traffic—choose trusted, no-log providers</p>
+                            </div>
+                        </div>
+
+                        <div class="protection-layer layer-2">
+                            <div class="layer-number">Layer 2</div>
+                            <div class="layer-content">
+                                <h4>🧅 Tor Network</h4>
+                                <p><strong>What it does:</strong> Routes traffic through multiple encrypted relays, making tracking nearly impossible</p>
+                                <ul>
+                                    <li>Anonymizes connection source</li>
+                                    <li>Prevents correlation of your activities</li>
+                                    <li>No single point knows both source and destination</li>
+                                </ul>
+                                <p class="layer-note">⚠️ <strong>Trade-off:</strong> Slower speeds due to multi-hop routing</p>
+                            </div>
+                        </div>
+
+                        <div class="protection-layer layer-3">
+                            <div class="layer-number">Layer 3</div>
+                            <div class="layer-content">
+                                <h4>💬 End-to-End Encrypted Apps</h4>
+                                <p><strong>What it does:</strong> Ensures only sender and receiver can read message content</p>
+                                <ul>
+                                    <li>Signal, WhatsApp (for messages)</li>
+                                    <li>ProtonMail (for email)</li>
+                                    <li>VeraCrypt (for files)</li>
+                                </ul>
+                                <p class="layer-note">⚠️ <strong>Limitation:</strong> Metadata (who, when, how often) may still be visible to service providers</p>
+                            </div>
+                        </div>
+
+                        <div class="protection-layer layer-4">
+                            <div class="layer-number">Layer 4</div>
+                            <div class="layer-content">
+                                <h4>🚫 Tracker Blockers & Privacy Extensions</h4>
+                                <p><strong>What it does:</strong> Blocks third-party tracking scripts and ads</p>
+                                <ul>
+                                    <li>uBlock Origin (ad/tracker blocker)</li>
+                                    <li>Privacy Badger (learns trackers automatically)</li>
+                                    <li>HTTPS Everywhere (forces encrypted connections)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-chart">
+                        <h4>Protection Comparison</h4>
+                        <table class="protection-table">
+                            <thead>
+                                <tr>
+                                    <th>What's Visible</th>
+                                    <th>Normal Browsing</th>
+                                    <th>Incognito Mode</th>
+                                    <th>Full Privacy Stack</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Browsing History (Local)</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="hidden-status">✗ Hidden</td>
+                                    <td class="hidden-status">✗ Hidden</td>
+                                </tr>
+                                <tr>
+                                    <td>IP Address</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="hidden-status">✗ Hidden</td>
+                                </tr>
+                                <tr>
+                                    <td>ISP Tracking</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="hidden-status">✗ Hidden</td>
+                                </tr>
+                                <tr>
+                                    <td>Website Tracking</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="partial-status">◐ Minimized</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Admin (School/Work)</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="visible-status">✓ Visible</td>
+                                    <td class="hidden-status">✗ Hidden</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="action-steps">
+                        <h4>🎯 Take Action Now</h4>
+                        <ol class="action-list">
+                            <li>Install a reputable VPN (ProtonVPN, Mullvad, or IVPN for no-log policies)</li>
+                            <li>Use Firefox or Brave browser with privacy-focused settings</li>
+                            <li>Add uBlock Origin and Privacy Badger extensions</li>
+                            <li>Switch to Signal for messaging and ProtonMail for sensitive emails</li>
+                            <li>Use Tor Browser for activities requiring maximum anonymity</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-takeaways glass-panel fade-in-up">
+                <h3>Key Takeaways</h3>
+                <div class="takeaways-grid">
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">1</span>
+                        <p><strong>Incognito ≠ Anonymous:</strong> Private browsing only stops local history—everyone else can still see you.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">2</span>
+                        <p><strong>Layer Your Defenses:</strong> Combine VPN, Tor, encrypted apps, and tracker blockers for real protection.</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <span class="takeaway-number">3</span>
+                        <p><strong>Understand Trade-offs:</strong> Maximum privacy may mean slower speeds—choose based on your threat model.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="module1.html" class="nav-button prev-button">← Previous Module</a>
+                <a href="module3.html" class="nav-button next-button">Next Module →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About TrustSphere</h4>
+                    <p>An educational platform dedicated to digital privacy awareness and trust-building through interactive learning.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="module1.html">Terms & Dark Patterns</a></li>
+                        <li><a href="module2.html">False Security</a></li>
+                        <li><a href="module3.html">Cyber Threats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>info@trustsphere.edu</p>
+                    <p>Privacy Policy | Terms of Use</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TrustSphere. Educational purposes only. Built with transparency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
